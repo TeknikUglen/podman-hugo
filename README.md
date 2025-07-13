@@ -27,13 +27,16 @@ podman build -t teknikuglen/hugo-builder:1 -f Containerfile .
 The container will also serve draft files. Perfect for developing your documents. 
 
 ```sh
-podman run --rm -v $(pwd)/src:/src -p 127.0.0.1:1313:1313 teknikuglen/hugo-builder hugo server -D
+podman run --rm -v $(pwd)/src:/src:Z --userns=keep-id -p 127.0.0.1:1313:1313 teknikuglen/hugo-builder hugo server -D
 ```
+
+The `--userns=keep-id` parameter keeps the owner id inside the container the same as on the host.  
+The `:Z` parameter is to ensure selinux permissions are correct inside the container.
 
 ## Generate output files
 
 This will generate the final static files and place them in the `site_build` directory.
 
 ```sh
-podman run --rm -v $(pwd)/src:/src teknikuglen/hugo-builder hugo -d /src/site_build
+podman run --rm -v $(pwd)/src:/src:Z --userns=keep-id teknikuglen/hugo-builder hugo -d /src/site_build
 ```
