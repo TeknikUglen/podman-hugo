@@ -1,5 +1,8 @@
 # Hugo in a Container
 
+> [!Warning]
+> Moved to codeberg [https://codeberg.org/TeknikUglen/podman-hugo](https://codeberg.org/TeknikUglen/podman-hugo)
+
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/isc)
 [![Podman](https://img.shields.io/badge/Podman-grey?logo=podman&logoColor=ffffff)](https://github.com/containers/podman)
 [![Hugo](https://img.shields.io/badge/Static%20Site%20Builder-Hugo-green)](https://gohugo.io/)
